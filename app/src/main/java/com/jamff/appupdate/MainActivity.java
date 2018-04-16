@@ -13,12 +13,14 @@ public class MainActivity extends AppCompatActivity {
 
     private ApkUpdateTask mApkUpdateTask;
 
+    private Button bt_version;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button bt_version = findViewById(R.id.bt_version);
+        bt_version = findViewById(R.id.bt_version);
         TextView tv_version = findViewById(R.id.tv_version);
 
         String versionName = APKUtils.getVersionName(this);
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
             bt_version.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    bt_version.setEnabled(false);
                     mApkUpdateTask = new ApkUpdateTask(MainActivity.this);
                     mApkUpdateTask.execute();
                 }
