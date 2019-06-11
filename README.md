@@ -1,7 +1,7 @@
 # APP_Update
 增量更新
 
-###patch:1.0版本
+### patch:1.0版本
 
 cmake中引入多个源文件
 ```cmake
@@ -67,7 +67,7 @@ target_link_libraries( # Specifies the target library.
                        ${log-lib} )
 ```
 
-###app:2.0版本
+### app:2.0版本
 
 是在bspath.c中通过include引入其他源文件，不推荐
 ```cmake
